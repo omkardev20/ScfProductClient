@@ -1,0 +1,133 @@
+:root {
+  --ink: #1c1915;
+  --muted: #6b645b;
+  --line: #e4dcd0;
+  --paper: #f7f3ec;
+  --card: #fffdf9;
+  --green: #1f6b45;
+  --green-dark: #144a30;
+  --danger: #9c2f2f;
+  --shadow: 0 10px 30px rgba(28, 25, 21, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+a { color: var(--green-dark); }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button, .button {
+  background: var(--green);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:disabled { opacity: 0.6; cursor: wait; }
+
+.ghost, button.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.danger { background: var(--danger); }
+
+.shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+
+.nav {
+  padding: 1.25rem;
+  border-right: 1px solid var(--line);
+  background: #fffaf3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.nav a { text-decoration: none; }
+
+.brand {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.role {
+  margin: 0 0 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.main { padding: 1.5rem; }
+
+.page-head h1 { margin: 0 0 0.25rem; }
+
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; margin: 0.2rem 0; }
+
+.card, .panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.stack { display: grid; gap: 1rem; }
+.split { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; align-items: start; }
+
+.field { display: grid; gap: 0.3rem; margin-bottom: 0.75rem; }
+.field span { font-size: 0.85rem; color: var(--muted); }
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.8rem; color: var(--muted); font-weight: normal; }
+
+.error { color: var(--danger); }
+.ok { color: var(--green-dark); }
+
+.auth-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.auth-card { width: min(440px, 100%); }
+
+.link-row { margin-top: 1rem; }
+
+@media (max-width: 800px) {
+  .shell, .split { grid-template-columns: 1fr; }
+  .nav { border-right: 0; border-bottom: 1px solid var(--line); }
+}
